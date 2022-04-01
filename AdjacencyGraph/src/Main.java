@@ -3,6 +3,40 @@ public class Main {
     public static void main(String[] args) {
         AdjacencyListGraph adjDirectedG=createDirectedAdj();
         adjDirectedG.PrintGraph();
+
+//    // Creating object opf class in main() methodn
+//    minHeap minHeap = new minHeap(15);
+//
+//    // Inserting element to minHeap
+//    // using insert() method
+//
+//    // Custom input entries
+//        minHeap.insert(1);
+//        minHeap.insert(2);
+//        minHeap.insert(3);
+//        minHeap.insert(4);
+//        minHeap.insert(5);
+//        minHeap.insert(6);
+//        minHeap.insert(7);
+//        minHeap.insert(8);
+//        minHeap.insert(9);
+//        minHeap.insert(10);
+//        minHeap.insert(11);
+//        minHeap.insert(12);
+//        minHeap.insert(13);
+//        minHeap.insert(14);
+//        minHeap.insert(T15);
+
+
+    // Print all elements of the heap
+        //minHeap.print();
+
+    // Removing minimum value from above heap
+    // and printing it
+        //System.out.println("The Min val is "
+          //      + minHeap.remove());
+
+
     }
 
     public static AdjacencyListGraph createDirectedAdj(){
