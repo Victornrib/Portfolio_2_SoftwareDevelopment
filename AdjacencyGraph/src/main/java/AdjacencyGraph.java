@@ -57,30 +57,29 @@ public class AdjacencyGraph {
         for(int i = 0; i < Towns.size(); i ++) {
             Queue.Insert(Towns.get(i)); //Town pairs inserted into Q<> so when Town pairs are updated, Q is updated too
         }
-        //MST is empty at first
-        int MST = 0;
+        //totalMST_Distance is empty at first
+        int totalMST_Distance = 0;
 
         while(!Queue.isEmpty()) {
-            Town currentV = Queue.extractMin(); //using minHeap to get min value/dist
-            int numOfOutEdges = currentV.OutEdges.size(); //gets specific Town in Towns and finds size of outedges
-            for(int potentialVIndex = 0; potentialVIndex < numOfOutEdges; potentialVIndex++)
+            Town currentTown = Queue.extractMin(); //using minHeap to get min value/dist
+            int numOfOutEdges = currentTown.OutEdges.size(); //gets specific Town in Towns and finds size of outedges
+            for(int potentialTownIndex = 0; potentialTownIndex < numOfOutEdges; potentialTownIndex++)
             {
-
-                Integer potentialdist = currentV.OutEdges.get(potentialVIndex).dist;
-                Town v=currentV.OutEdges.get(potentialVIndex).to;//get current V
-                if(potentialdist < v.dist) {
-                    v.dist = potentialdist;  //distMatrix[u.index][v];
-                    v.prev = currentV;
-                    int pos = Queue.getPosition(v);
+                Integer potentialDist = currentTown.OutEdges.get(potentialTownIndex).dist;
+                Town potentialTown = currentTown.OutEdges.get(potentialTownIndex).to;//get current V
+                if(potentialDist < potentialTown.dist) {
+                    potentialTown.dist = potentialDist;
+                    potentialTown.prev = currentTown;
+                    int pos = Queue.getPosition(potentialTown); //rename pos
                     Queue.decreasekey(pos); //takes node
                 }
             }
-            currentV.visited = true;
-            MST += currentV.dist;
+            currentTown.visited = true;
+            totalMST_Distance += currentTown.dist;
         }
-        System.out.println("MST is " +  MST);
+        System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + "km.\n");
         for(int i = 0; i < Towns.size(); i ++) {
-            System.out.println("Parent " + Towns.get(i).prev + " to " + "Edge dist " + Towns.get(i).dist);
+            System.out.println("The distance from " + Towns.get(i).prev + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
         }
     }
 }
