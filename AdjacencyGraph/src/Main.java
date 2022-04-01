@@ -4,37 +4,38 @@ public class Main {
         AdjacencyListGraph adjDirectedG=createDirectedAdj();
         adjDirectedG.PrintGraph();
 
-//    // Creating object opf class in main() methodn
-//    minHeap minHeap = new minHeap(15);
-//
-//    // Inserting element to minHeap
-//    // using insert() method
-//
-//    // Custom input entries
-//        minHeap.insert(1);
-//        minHeap.insert(2);
-//        minHeap.insert(3);
-//        minHeap.insert(4);
-//        minHeap.insert(5);
-//        minHeap.insert(6);
-//        minHeap.insert(7);
-//        minHeap.insert(8);
-//        minHeap.insert(9);
-//        minHeap.insert(10);
-//        minHeap.insert(11);
-//        minHeap.insert(12);
-//        minHeap.insert(13);
-//        minHeap.insert(14);
-//        minHeap.insert(T15);
+    // Creating object opf class in main() methodn
+    minHeap minHeap = new minHeap(16);
+
+    // Inserting element to minHeap
+    // using insert() method
+
+    // Custom input entries
+        minHeap.insert(adjDirectedG.get(0).town);
+        minHeap.insert(T1);
+        minHeap.insert(T2);
+        minHeap.insert(T3);
+        minHeap.insert(T4);
+        minHeap.insert(T5);
+        minHeap.insert(T6);
+        minHeap.insert(T7);
+        minHeap.insert(T8);
+        minHeap.insert(T9);
+        minHeap.insert(T10);
+        minHeap.insert(T11);
+        minHeap.insert(T12);
+        minHeap.insert(T13);
+        minHeap.insert(T14);
+        minHeap.insert(T15);
 
 
-    // Print all elements of the heap
-        //minHeap.print();
+     //Print all elements of the heap
+        minHeap.print();
 
-    // Removing minimum value from above heap
-    // and printing it
-        //System.out.println("The Min val is "
-          //      + minHeap.remove());
+     //Removing minimum value from above heap
+     //and printing it
+        System.out.println("The Min val is "
+                + minHeap.remove());
 
 
     }

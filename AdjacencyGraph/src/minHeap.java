@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 // //My minHeap implementation
 
-  minHeap(){
+  public Class minHeap(){
     int [] heap;
     int size;
     int capacity;
