@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>AdjacencyGraph</artifactId>
+    <artifactId>Portfolio_2_SoftwareDevelopment</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
