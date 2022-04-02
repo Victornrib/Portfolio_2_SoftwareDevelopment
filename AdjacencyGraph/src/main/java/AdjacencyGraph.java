@@ -78,7 +78,7 @@ public class AdjacencyGraph {
             currentTown.visited = true;
             totalMST_Distance += currentTown.dist;
         }
-        System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + "km.\n");
+        System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + " km.\n");
         for(int i = 1; i < Towns.size(); i ++) {
             System.out.println("The distance from " + Towns.get(i).prev.name + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
         }
