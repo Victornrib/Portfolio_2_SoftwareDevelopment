@@ -9,7 +9,7 @@ class AdjacencyGraphTest {
 
 
     @Test
-    void createAdjacencyGraph() {
+    void testCreateAdjacencyGraph() {
 
         Town T0 = new Town("Esklidstrup");
         Town T1 = new Town("Haslev");
@@ -42,7 +42,7 @@ class AdjacencyGraphTest {
 
 
     @Test
-    void createAdjacencyGraphError() {
+    void testCreateAdjacencyGraphError() {
 
         Town T0 = new Town("Esklidstrup");
 
@@ -50,6 +50,13 @@ class AdjacencyGraphTest {
         adjacencyGraph.addTown(T0);
 
         assertNotEquals(new Town("Slagelse"), adjacencyGraph.Towns.get(0));
+    }
+
+
+
+    @Test
+    void testPrimsAdjacencyGraph() {
+        //Test prims
     }
 
 }
