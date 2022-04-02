@@ -52,6 +52,7 @@ public class AdjacencyGraph {
         if (Towns.size() > 0) {
             Towns.get(0).dist = 0;
             Towns.get(0).visited = true;
+            Towns.get(0).prev = Towns.get(0);
         }
         //filling both arraylists with max.values and indices
         for(int i = 0; i < Towns.size(); i ++) {
@@ -78,8 +79,8 @@ public class AdjacencyGraph {
             totalMST_Distance += currentTown.dist;
         }
         System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + "km.\n");
-        for(int i = 0; i < Towns.size(); i ++) {
-            System.out.println("The distance from " + Towns.get(i).prev + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
+        for(int i = 1; i < Towns.size(); i ++) {
+            System.out.println("The distance from " + Towns.get(i).prev.name + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
         }
     }
 }
