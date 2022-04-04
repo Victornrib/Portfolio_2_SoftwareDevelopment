@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         AdjacencyGraph adjDirectedG=createDirectedAdj();
-        adjDirectedG.PrintGraph();
+        adjDirectedG.printAdjGraph();
         adjDirectedG.PrimsMST();
     }
 
