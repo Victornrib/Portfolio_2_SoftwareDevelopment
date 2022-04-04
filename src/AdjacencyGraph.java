@@ -89,9 +89,9 @@ public class AdjacencyGraph {
             System.out.println("There are no Towns in this Adjacency Graph.");
         }
         //end running time
-        long endTime   = System.nanoTime();
+        long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
-        System.out.println("\nRunning time of PrimsMST: " + totalTime + " ns.");
+        System.out.println("Running time of PrimsMST: " + totalTime + " ns");
     }
 }
 
