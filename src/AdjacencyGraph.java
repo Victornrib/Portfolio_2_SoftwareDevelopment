@@ -68,7 +68,7 @@ public class AdjacencyGraph {
                             potentialTown.dist = potentialDist; //Updates to the distance from currentTown to potentialTown
                             potentialTown.prev = currentTown;   //Connects the potentialTown to the currentTown
                             int posInMinHeap = Queue.getPosition(potentialTown); //Finds Town in MinHeap
-                            Queue.decreasekey(posInMinHeap);    //Updates position of Town
+                            Queue.decreaseKey(posInMinHeap);    //Updates position of Town
                         }
                     }
                 }

@@ -1,3 +1,11 @@
+//Software Development Spring 2022 RUC
+//Portfolio 2
+//This program was written by:
+//Su Mei Gwen Ho 72033 smgho@ruc.dk
+//Kristina Carter 74071 kcarter@ruc.dk
+//Victor Nielsen 74762 ribeirerte@ruc.dk
+//This code should find the minimum spanning tree of a list of Danish towns, using Prims algorithm and a MinHeap.
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,6 +17,7 @@ public class Main {
     public static AdjacencyGraph createUndirectedAdjGraph(){
         AdjacencyGraph newElectricalGrid = new AdjacencyGraph();
 
+        //List of Towns
         Town T0 = new Town("Esklidstrup");
         Town T1 = new Town("Haslev");
         Town T2 = new Town("Holbaek");
@@ -26,7 +35,7 @@ public class Main {
         Town T14 = new Town("Soroe");
         Town T15 = new Town("Vordingborg");
 
-
+        //Add Towns to the Adjacency Graph
         newElectricalGrid.addTown(T0);
         newElectricalGrid.addTown(T1);
         newElectricalGrid.addTown(T2);
@@ -44,7 +53,7 @@ public class Main {
         newElectricalGrid.addTown(T14);
         newElectricalGrid.addTown(T15);
 
-
+        //List of edges
         //Eskildstrup
         newElectricalGrid.addUndirectedEdge(T0,T7,28);
         newElectricalGrid.addUndirectedEdge(T0,T9,13);
