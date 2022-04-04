@@ -1,17 +1,20 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+//Base of the code is from class
 
-public class MinHeap<T extends Comparable<T> >{
-    HashMap<T,Integer> positionTable=new HashMap<>();
+public class MinHeap<Town extends Comparable<Town> >{
+    HashMap<Town,Integer> positionTable=new HashMap<>();
 
     // root is at index 0
-    ArrayList<T> minheap;
+    ArrayList<Town> minheap;
     private int size;
     public MinHeap(){
-        this.minheap=new ArrayList<T>();
+        this.minheap=new ArrayList<Town>();
         this.size=0;
     }
-    public int getPosition(T item){
+    //Gets positions of all branches
+    public int getPosition(Town item){
         return positionTable.get(item);
     }
     public boolean isEmpty(){
@@ -27,14 +30,15 @@ public class MinHeap<T extends Comparable<T> >{
         return pos*2 +2;
     }
     private void swap(int pos1, int pos2){
-        T dummy= minheap.get(pos1);
+        Town dummy= minheap.get(pos1);
 
         minheap.set(pos1, minheap.get(pos2));
         minheap.set(pos2,dummy);
         positionTable.put(minheap.get(pos1),pos1);
         positionTable.put(minheap.get(pos2),pos2);
     }
-    public void Insert(T item){
+    //Adding towns
+    public void Insert(Town item){
         minheap.add(item);
         positionTable.put(item,size);
         size++;
@@ -48,7 +52,8 @@ public class MinHeap<T extends Comparable<T> >{
         }
     }
 
-    public T viewMin(){
+    //organizing minHeap
+    public Town viewMin(){
         return minheap.get(0);
     }
     private boolean movedown(int pos){
@@ -74,8 +79,9 @@ public class MinHeap<T extends Comparable<T> >{
             }
         }
     }
-    public T extractMin(){
-        T min = minheap.get(0);
+    //returning the minHeap
+    public Town extractMin(){
+        Town min = minheap.get(0);
         minheap.set(0, minheap.get(size-1));
         positionTable.put(minheap.get(0),0);
         size--;
