@@ -34,6 +34,7 @@ public class AdjacencyGraph {
 
     //Minimum spanning tree... Prims algorithm
     public void PrimsMST(){
+        //Starting running time
         long startTime = System.nanoTime();
         MinHeap<Town> Queue = new MinHeap<Town>();
 
