@@ -1,5 +1,3 @@
-
-
 class Edge{
     Town from;
     Town to;

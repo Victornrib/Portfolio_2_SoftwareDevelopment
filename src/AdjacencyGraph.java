@@ -69,10 +69,12 @@ public class AdjacencyGraph {
                 Integer potentialDist = currentTown.OutEdges.get(potentialTownIndex).dist;
                 Town potentialTown = currentTown.OutEdges.get(potentialTownIndex).to;//get current V
                 if(potentialDist < potentialTown.dist) {
-                    potentialTown.dist = potentialDist;
-                    potentialTown.prev = currentTown;
-                    int pos = Queue.getPosition(potentialTown); //rename pos
-                    Queue.decreasekey(pos); //takes node
+                    if (!potentialTown.visited) {
+                        potentialTown.dist = potentialDist;
+                        potentialTown.prev = currentTown;
+                        int pos = Queue.getPosition(potentialTown); //rename pos
+                        Queue.decreasekey(pos); //takes node
+                    }
                 }
             }
             currentTown.visited = true;
