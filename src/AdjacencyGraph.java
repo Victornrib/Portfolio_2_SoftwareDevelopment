@@ -79,7 +79,7 @@ public class AdjacencyGraph {
             }
             System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + " km.\n");
             int pricePerKm = 1000000; //1000 kr per meter
-            System.out.println("The total cost of the new electrical grid would be " + totalMST_Distance*pricePerKm + " kr.");
+            System.out.println("The total cost of the new electrical grid would be " + totalMST_Distance*pricePerKm + " kr.\n");
         }
         else {
             System.out.println("There are no Towns in this Adjacency Graph.");
