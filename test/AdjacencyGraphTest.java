@@ -56,6 +56,30 @@ class AdjacencyGraphTest {
 
     @Test
     void testPrimsAdjacencyGraph() {
+
+        Town T0 = new Town("Esklidstrup");
+        Town T1 = new Town("Haslev");
+        Town T2 = new Town("Holbaek");
+        Town T3 = new Town("Jaegerspris");
+        Town T4 = new Town("Kalundborg");
+        Town T5 = new Town("Korsoer");
+
+        AdjacencyGraph adjacencyGraph = new AdjacencyGraph();
+        adjacencyGraph.addTown(T0);
+        adjacencyGraph.addTown(T1);
+        adjacencyGraph.addTown(T2);
+        adjacencyGraph.addTown(T3);
+        adjacencyGraph.addTown(T4);
+        adjacencyGraph.addTown(T5);
+
+        adjacencyGraph.PrimsMST();
+    }
+
+
+
+
+    @Test
+    void testPrimsAdjacencyGraphWithNoTowns() {
         AdjacencyGraph adjacencyGraph = new AdjacencyGraph();
         adjacencyGraph.PrimsMST();
     }
