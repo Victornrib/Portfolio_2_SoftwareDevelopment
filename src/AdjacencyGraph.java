@@ -34,6 +34,8 @@ public class AdjacencyGraph {
 
     //Minimum spanning tree... Prims algorithm
     public void PrimsMST(){
+        //Starting running time
+        long startTime = System.nanoTime();
         MinHeap<Town> Queue = new MinHeap<Town>();
 
         //Only runs algorithm if Towns<> is not empty
@@ -86,6 +88,9 @@ public class AdjacencyGraph {
         else {
             System.out.println("There are no Towns in this Adjacency Graph.");
         }
+        long endTime   = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("\nRunning time of PrimsMST: " + totalTime + " ns.");
     }
 }
 
