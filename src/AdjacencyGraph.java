@@ -53,36 +53,40 @@ public class AdjacencyGraph {
             Towns.get(0).dist = 0;
             Towns.get(0).visited = true;
             Towns.get(0).prev = Towns.get(0);
-        }
-        //filling both arraylists with max.values and indices
-        for(int i = 0; i < Towns.size(); i ++) {
-            Queue.Insert(Towns.get(i)); //Town pairs inserted into Q<> so when Town pairs are updated, Q is updated too
-        }
-        //totalMST_Distance is empty at first
-        int totalMST_Distance = 0;
 
-        while(!Queue.isEmpty()) {
-            Town currentTown = Queue.extractMin(); //using minHeap to get min value/dist
-            int numOfOutEdges = currentTown.OutEdges.size(); //gets specific Town in Towns and finds size of outedges
-            for(int potentialTownIndex = 0; potentialTownIndex < numOfOutEdges; potentialTownIndex++)
-            {
-                Integer potentialDist = currentTown.OutEdges.get(potentialTownIndex).dist;
-                Town potentialTown = currentTown.OutEdges.get(potentialTownIndex).to;//get current V
-                if(potentialDist < potentialTown.dist) {
-                    if (!potentialTown.visited) {
-                        potentialTown.dist = potentialDist;
-                        potentialTown.prev = currentTown;
-                        int pos = Queue.getPosition(potentialTown); //rename pos
-                        Queue.decreasekey(pos); //takes node
+            //filling both arraylists with max.values and indices
+            for(int i = 0; i < Towns.size(); i ++) {
+                Queue.Insert(Towns.get(i)); //Town pairs inserted into Q<> so when Town pairs are updated, Q is updated too
+            }
+            //totalMST_Distance is empty at first
+            int totalMST_Distance = 0;
+
+            while(!Queue.isEmpty()) {
+                Town currentTown = Queue.extractMin(); //using minHeap to get min value/dist
+                int numOfOutEdges = currentTown.OutEdges.size(); //gets specific Town in Towns and finds size of outedges
+                for(int potentialTownIndex = 0; potentialTownIndex < numOfOutEdges; potentialTownIndex++)
+                {
+                    Integer potentialDist = currentTown.OutEdges.get(potentialTownIndex).dist;
+                    Town potentialTown = currentTown.OutEdges.get(potentialTownIndex).to;//get current V
+                    if(potentialDist < potentialTown.dist) {
+                        if (!potentialTown.visited) {
+                            potentialTown.dist = potentialDist;
+                            potentialTown.prev = currentTown;
+                            int pos = Queue.getPosition(potentialTown); //rename pos
+                            Queue.decreasekey(pos); //takes node
+                        }
                     }
                 }
+                currentTown.visited = true;
+                totalMST_Distance += currentTown.dist;
             }
-            currentTown.visited = true;
-            totalMST_Distance += currentTown.dist;
+            System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + " km.\n");
+            for(int i = 1; i < Towns.size(); i ++) {
+                System.out.println("The distance from " + Towns.get(i).prev.name + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
+            }
         }
-        System.out.println("\nThe total distance of the MST is " +  totalMST_Distance + " km.\n");
-        for(int i = 1; i < Towns.size(); i ++) {
-            System.out.println("The distance from " + Towns.get(i).prev.name + " to " + Towns.get(i).name + " is " + Towns.get(i).dist + " km.");
+        else {
+            System.out.println("There are no towns in the adjacency graph.");
         }
     }
 }

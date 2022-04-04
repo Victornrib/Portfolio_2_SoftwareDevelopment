@@ -56,7 +56,8 @@ class AdjacencyGraphTest {
 
     @Test
     void testPrimsAdjacencyGraph() {
-        //Test prims
+        AdjacencyGraph adjacencyGraph = new AdjacencyGraph();
+        adjacencyGraph.PrimsMST();
     }
 
 }
