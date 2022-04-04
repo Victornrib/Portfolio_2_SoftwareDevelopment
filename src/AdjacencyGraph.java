@@ -44,7 +44,7 @@ public class AdjacencyGraph {
             Towns.get(0).prev = Towns.get(0);
 
             //Inserts all Towns into the MinHeap
-            for(int i = 0; i < Towns.size(); i ++) {
+            for (int i = 0; i < Towns.size(); i ++) {
                 Queue.Insert(Towns.get(i));
             }
 
@@ -73,6 +73,8 @@ public class AdjacencyGraph {
                 currentTown.visited = true;
                 totalMST_Distance += currentTown.dist;
             }
+
+            System.out.println("\nThe MST contains the following sequence: ");
 
             for(int i = 1; i < Towns.size(); i ++) {
                 System.out.println(Towns.get(i).prev.name + " is connected to " + Towns.get(i).name + " by " + Towns.get(i).dist + " km");

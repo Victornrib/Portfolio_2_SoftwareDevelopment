@@ -1,12 +1,12 @@
 public class Main {
 
     public static void main(String[] args) {
-        AdjacencyGraph adjDirectedG=createDirectedAdj();
-        adjDirectedG.printAdjGraph();
-        adjDirectedG.PrimsMST();
+        AdjacencyGraph undirectedAdjGraph = createUndirectedAdjGraph();
+        undirectedAdjGraph.printAdjGraph();
+        undirectedAdjGraph.PrimsMST();
     }
 
-    public static AdjacencyGraph createDirectedAdj(){
+    public static AdjacencyGraph createUndirectedAdjGraph(){
         AdjacencyGraph newElectricalGrid = new AdjacencyGraph();
 
         Town T0 = new Town("Esklidstrup");
