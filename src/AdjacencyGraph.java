@@ -33,7 +33,7 @@ public class AdjacencyGraph {
     }
 
     //Minimum spanning tree... Prims algorithm
-    public void PrimsMST(){
+    public void PrimsMST() {
         //Starting running time
         long startTime = System.nanoTime();
         MinHeap<Town> Queue = new MinHeap<Town>();
@@ -46,7 +46,7 @@ public class AdjacencyGraph {
             Towns.get(0).prev = Towns.get(0);
 
             //Inserts all Towns into the MinHeap
-            for(int i = 0; i < Towns.size(); i ++) {
+            for (int i = 0; i < Towns.size(); i ++) {
                 Queue.Insert(Towns.get(i));
             }
 
@@ -68,13 +68,15 @@ public class AdjacencyGraph {
                             potentialTown.dist = potentialDist; //Updates to the distance from currentTown to potentialTown
                             potentialTown.prev = currentTown;   //Connects the potentialTown to the currentTown
                             int posInMinHeap = Queue.getPosition(potentialTown); //Finds Town in MinHeap
-                            Queue.decreasekey(posInMinHeap);    //Updates position of Town
+                            Queue.decreaseKey(posInMinHeap);    //Updates position of Town
                         }
                     }
                 }
                 currentTown.visited = true;
                 totalMST_Distance += currentTown.dist;
             }
+
+            System.out.println("\nThe MST contains the following sequence: ");
 
             for(int i = 1; i < Towns.size(); i ++) {
                 System.out.println(Towns.get(i).prev.name + " is connected to " + Towns.get(i).name + " by " + Towns.get(i).dist + " km");
@@ -86,9 +88,10 @@ public class AdjacencyGraph {
         else {
             System.out.println("There are no Towns in this Adjacency Graph.");
         }
-        long endTime   = System.nanoTime();
+        //end running time
+        long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
-        System.out.println("\nRunning time of PrimsMST: " + totalTime + " ns.");
+        System.out.println("Running time of PrimsMST: " + totalTime + " ns");
     }
 }
 
