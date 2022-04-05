@@ -14,7 +14,7 @@ public class MinHeap<Town extends Comparable<Town>> {
         this.size = 0;
     }
 
-    //Gets positions of all branches /////////////////????? all branches? or just the position of a town??
+    //Get positions of all Towns
     public int getPosition(Town t) {
         return townPositionIndex.get(t);
     }
@@ -24,13 +24,16 @@ public class MinHeap<Town extends Comparable<Town>> {
         return size <= 0;
     }
 
-    //Not sure what the next 3 methods do, perhaps leave a comment?
+    // Parent node
     private int Parent(int pos) {
         return (pos-1)/2;
     }
+    // Left child node
+
     private int leftChild(int pos) {
         return pos*2 +1;
     }
+    // Right child node
     private int rightChild(int pos) {
         return pos*2 +2;
     }
@@ -49,10 +52,10 @@ public class MinHeap<Town extends Comparable<Town>> {
         minHeapTowns.add(t);
         townPositionIndex.put(t, size);
         size++;
-        decreaseKey(size -1); //not sure what this does, perhaps put a comment (why -1??)
+        decreaseKey(size -1);
     }
 
-    //shuffles Towns along into place in the MinHeap by comparing and swapping (is this correct K?)
+    //shuffles Towns along into place in the MinHeap by comparing and swapping
     public void decreaseKey(int pos){
         int currentPos = pos;
         while (minHeapTowns.get(currentPos).compareTo(minHeapTowns.get(Parent(currentPos))) < 0){
@@ -61,12 +64,12 @@ public class MinHeap<Town extends Comparable<Town>> {
         }
     }
 
-    //Organises the MinHeap (this is your comment, but it is not what it does - delete?)
+
     public Town viewMin() {
         return minHeapTowns.get(0);
     }
 
-    //please make comment here
+    // Organizes Towns
     private boolean moveDown(int pos) {
         boolean leftSmaller = leftChild(pos) < size
                 && (minHeapTowns.get(leftChild(pos)).compareTo(minHeapTowns.get(pos)) < 0);
@@ -75,7 +78,7 @@ public class MinHeap<Town extends Comparable<Town>> {
         return leftSmaller || rightSmaller;
     }
 
-    //Shuffles Towns up the MinHeap (is this what it does?)
+    //Shuffles Towns up the MinHeap
     public void increaseKey(int pos) {
         int currentPos = pos;
         while (moveDown(currentPos))
@@ -93,7 +96,6 @@ public class MinHeap<Town extends Comparable<Town>> {
         }
     }
 
-    //returning the minHeap (---it just gives the min, does it also "return" it?? ...the following comment is mine which is what i think it actually does)
 
     //Takes out and returns the minTown (index 0) from the MinHeap and moves shuffles/bubbles rest of Towns up the heap
     public Town extractMin() {
