@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class MinHeap<Town extends Comparable<Town>> {
     HashMap<Town, Integer> townPositionIndex = new HashMap<>();
 
-    //The root is at index [0]
+    //The root is at index 0
     ArrayList<Town> minHeapTowns;
     private int size;
 
@@ -24,12 +24,11 @@ public class MinHeap<Town extends Comparable<Town>> {
         return size <= 0;
     }
 
-    // Parent node
+    //Parent node
     private int Parent(int pos) {
         return (pos-1)/2;
     }
-    // Left child node
-
+    //Left child node
     private int leftChild(int pos) {
         return pos*2 +1;
     }
@@ -64,7 +63,6 @@ public class MinHeap<Town extends Comparable<Town>> {
         }
     }
 
-
     public Town viewMin() {
         return minHeapTowns.get(0);
     }
@@ -96,13 +94,12 @@ public class MinHeap<Town extends Comparable<Town>> {
         }
     }
 
-
     //Takes out and returns the minTown (index 0) from the MinHeap and moves shuffles/bubbles rest of Towns up the heap
     public Town extractMin() {
         Town minTown = minHeapTowns.get(0);
         minHeapTowns.set(0, minHeapTowns.get(size -1));
         townPositionIndex.put(minHeapTowns.get(0), 0);
-        size--;
+        size --;
         increaseKey(0);
         return minTown;
     }
