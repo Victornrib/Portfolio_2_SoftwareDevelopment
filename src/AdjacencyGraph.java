@@ -91,7 +91,7 @@ public class AdjacencyGraph {
         //end running time
         long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
-        System.out.println("Running time of PrimsMST: " + totalTime + " ns");
+        System.out.println("\nRunning time of PrimsMST: " + totalTime + " ns");
     }
 }
 
